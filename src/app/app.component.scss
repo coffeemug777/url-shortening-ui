@@ -22,3 +22,111 @@ h1 {
   padding: 10px;
   text-align: center;
 }
+
+.padding-20 {
+  padding: 20px;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.main-css-test {
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+  display: grid;
+  grid-template-areas:
+    "rowOne"
+    "rowTwo"
+    "rowThree";
+
+  .join-our {
+    grid-area: rowOne;
+    color: #d0d2d6;
+
+    h2 {
+      color: #2bb4b1;
+    }
+
+    h3 {
+      color: #bedf32;
+    }
+  }
+
+  .monthly-sub {
+    background-color: #2bb4b1;
+    grid-area: rowTwo;
+
+    > div {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+
+      div:nth-child(1) {
+        font-size: 2rem;
+        margin: 0;
+        padding: 3px;
+      }
+
+      div:nth-child(2) {
+        font-size: 1.2rem;
+        opacity: 0.6;
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-items: center;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #bedf32;
+      color: #fff;
+      border-radius: 5px;
+      border: 1px solid #b3df32;
+      box-shadow: 1px 1px 3px 3px rgba(60, 64, 67, 0.2);
+    }
+  }
+
+  .why-us {
+    background-color: #49bebd;
+    grid-area: rowThree;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        font-size: 0.7rem;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  .main-css-test {
+    grid-template-areas:
+      "joinOur joinOur"
+      "colOne colTwo";
+
+    grid-template-columns: 1fr 1fr;
+
+    .join-our {
+      grid-area: joinOur;
+    }
+
+    .monthly-sub {
+      grid-area: colOne;
+    }
+
+    .why-us {
+      grid-area: colTwo;
+    }
+  }
+}
